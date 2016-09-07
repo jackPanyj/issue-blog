@@ -1,0 +1,29 @@
+.about {
+  display: flex;
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 60vw;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3), inset 0 0 3px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    margin: 20vh auto;
+    img {
+      height: 40%;
+      margin: 5% auto;
+    }
+    .user-repo {
+      display: flex;
+      height: 100%;
+      > .item {
+        margin: auto;
+        flex-grow: 1;
+        text-align: center;
+        &:not(:last-child) {
+          border-right: 1px solid #ccc;
+        }
+      }
+    }
+  }
+}
