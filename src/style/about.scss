@@ -9,13 +9,21 @@
     box-shadow: 0 0 5px rgba(0,0,0,0.3), inset 0 0 3px rgba(0,0,0,0.3);
     border-radius: 5px;
     margin: 20vh auto;
-    img {
+    .user-top {
+      display: flex;
       height: 40%;
-      margin: 5% auto;
+      padding: 20px 50px;
+      .user-name {
+        font-size: 20px;
+      }
+      img {
+        width: 20%;
+        margin-right: 50px;
+      }
     }
     .user-repo {
       display: flex;
-      height: 100%;
+      height: 60%;
       > .item {
         margin: auto;
         flex-grow: 1;
@@ -26,4 +34,9 @@
       }
     }
   }
+}
+
+a {
+  text-decoration: none;
+  color: teal;
 }

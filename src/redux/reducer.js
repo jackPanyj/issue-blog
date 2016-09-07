@@ -1,4 +1,4 @@
-import {fetchUserInfoEnd} from './action'
+import {fetchUserInfoEnd, fetchIssueEnd} from './action'
 import { combineReducers } from 'redux';
 
 function handleUserInfo(state = {}, action) {
@@ -13,6 +13,19 @@ function handleUserInfo(state = {}, action) {
   }
 }
 
+function handleIssue(state = {}, action) {
+  switch (action.type) {
+    case fetchIssueEnd:
+      return Object.assign({}, state, {
+        blogs: action.blogs
+      })
+      break;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
-  handleUserInfo
+  handleUserInfo,
+  handleIssue
 })

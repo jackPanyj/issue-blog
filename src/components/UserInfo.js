@@ -5,7 +5,13 @@ class UserInfo extends Component {
     const userInfo = this.props.userInfo
     console.log(1)
     return (	<div className="user-info">
-                  <img src={userInfo.data.avatar_url}/>
+                  <section className="user-top">
+                    <img src={userInfo.data.avatar_url}/>
+                    <div>
+                      <p className="user-name">{userInfo.data.name}</p>
+                      <a href={userInfo.data.html_url}>{userInfo.data.html_url}</a>
+                    </div>
+                  </section>
                   <section className="user-repo">
                     <div className="item">
                       <p>{userInfo.data.followers}</p>
