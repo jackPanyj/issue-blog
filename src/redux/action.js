@@ -24,11 +24,6 @@ function fetchIssue() {
       blogs.forEach((val, index) => {
         let content = marked(val.body)
         blogs[index].content = content
-        setTimeout(() => {
-          $('pre code').each(function(i, block) {
-            window.hljs.highlightBlock(block);
-          });
-        }, 1000)
       })
       dispatch({
         type: fetchIssueEnd,

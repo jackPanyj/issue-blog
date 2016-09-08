@@ -16,7 +16,7 @@ class Blog extends Component {
 	render(){
 			const blogs = this.props.handleIssue.blogs
       return (
-				<div className="blog">
+				<div className="blog markdown-body">
 					{blogs ? blogs.map((val, index) => <div className="blog-item"  key={index + Math.random()}><BlogItem blog={val}/></div>) : <div style={{margin:'auto'}}><CircularProgress size={2}/></div>}
 				</div>
 			)
