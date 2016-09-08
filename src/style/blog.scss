@@ -1,4 +1,7 @@
 .blog {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
   flex-grow: 1;
   padding: 50px;
 }

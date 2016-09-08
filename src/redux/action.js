@@ -4,7 +4,7 @@ const fetchIssueEnd = 'FETCH_ISSUE_END'
 const url = 'https://api.github.com/'
 function fetchUserInfo() {
   return dispatch => {
-    fetch(`${url}jackpanyj`)
+    fetch(`${url}users/jackpanyj`)
     .then(res => res.json())
     .then(data => {
       dispatch({
