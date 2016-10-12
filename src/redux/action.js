@@ -1,4 +1,4 @@
-import marked from 'marked'
+import zipObject from 'lodash/fp/zipObject'
 const fetchUserInfoEnd = 'FETCH_USER_INFO_END'
 const fetchIssueEnd = 'FETCH_ISSUE_END'
 const url = 'https://api.github.com/'
@@ -18,13 +18,11 @@ function fetchUserInfo() {
 
 function fetchIssue() {
   return dispatch => {
-    fetch(`${url}repos/jackpanyj/learning-note/issues`)
+    fetch(`${url}repos/jackpanyj/learning-note/issues?page=1`)
     .then(res => res.json())
     .then(blogs => {
-      blogs.forEach((val, index) => {
-        let content = marked(val.body)
-        blogs[index].content = content
-      })
+      let arrIndex = blogs.map(val => val.number)
+      blogs = zipObject(arrIndex, blogs)
       dispatch({
         type: fetchIssueEnd,
         blogs

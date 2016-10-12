@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
-import session from '../tools/session'
-import urls from '../tools/urls'
+import React, {Component} from 'react'
 import BlogItem from '../components/BlogItem'
 import {connect} from 'react-redux'
 import CircularProgress from 'material-ui/lib/circular-progress'
 import '../style/blog.scss'
 import { fetchIssue } from '../redux/action'
+import map from 'lodash/map'
 class Blog extends Component {
 	constructor (props) {
 		super(props)
@@ -14,12 +13,16 @@ class Blog extends Component {
 		this.props.dispatch(fetchIssue())
 	}
 	render(){
-			const blogs = this.props.handleIssue.blogs
-      return (
-				<div className="blog markdown-body">
-					{blogs ? blogs.map((val, index) => <div className="blog-item"  key={index + Math.random()}><BlogItem blog={val}/></div>) : <div style={{margin:'auto'}}><CircularProgress size={2}/></div>}
-				</div>
-			)
+			const blogs = this.props.issues.blogs
+			if (blogs) {
+				return (
+					<div className="blog">
+							{map(blogs, (val, index) =>  <BlogItem blog={val} key={index + Date.now()} />)}
+					</div>
+				)
+			} else {
+				return <div className="loading" />
+			}
 	}
 }
 

@@ -1,3 +1,4 @@
+@import "functions";
 html {
 	font-family: sans-serif;
 	background-color: #fafafa;
@@ -11,7 +12,36 @@ body {
 	margin: 0;
 	-webkit-font-smoothing:antialiased;
 	color: #727272;
+	background: linear-gradient(transparent 90%, #f7f7f7 0), linear-gradient(to right, transparent 90%, #f7f7f7 0) repeat center center;
+	background-size: 20px 20px;
 }
+.stars {
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+}
+.about-stars {
+	box-shadow: multiple-box-shadow(1300, 'orange')
+}
+.blog-stars {
+	box-shadow: multiple-box-shadow(1300, 'skyblue')
+}
+.home-stars {
+	box-shadow: multiple-box-shadow(1300, 'lightgreen')
+}
+.loading {
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	background: url(../assets/loading.svg) no-repeat center;
+}
+
+
+
 ul {
 	padding: 0;
 	list-style-type: none;
@@ -19,7 +49,6 @@ ul {
 .app-wrap {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
 	min-height: 100vh;
 }
 .app-header {
@@ -36,40 +65,11 @@ ul {
 }
 .home {
 	flex-grow: 1;
-	background-image: url('http://7xsn63.com2.z0.glb.clouddn.com/home-bg.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
 	z-index: -1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	@at-root {
-		.slogon {
-			text-align: center;
-			font-weight: 500;
-			color: #fff;
-			font-size: 50px;
-			width: 100%;
-			padding: 100px 0;
-			background-color: rgba(0, 0, 0, 0.5);
-			text-transform: uppercase;
-		}
-	}
-}
-
-.app-footer {
-	background-color: #00bcd4;
-	padding: 30px 0;
-	text-align: center;
-	flex-shrink: 0;
-	color: #fff;
-	font-size: 25px;
-
 }
 .about,.account {
 	flex-grow: 1;
-}
-
-pre {
 }

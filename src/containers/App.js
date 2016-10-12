@@ -10,11 +10,12 @@ class App extends Component {
   }
 
   render(){
+    const locationName = this.props.location.pathname.substr(1) || 'home'
     return (
         <div className="app-wrap">
+          <span className={`stars ${locationName}-stars`}></span>
           <NavBar/>
           {this.props.children}
-          <div className= "app-footer"> my footer</div>
         </div>
       )
   }

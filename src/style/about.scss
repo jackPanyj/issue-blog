@@ -5,10 +5,14 @@
     flex-direction: column;
     height: 350px;
     width: 600px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3), inset 0 0 3px rgba(0,0,0,0.3);
+    border: 3px solid #ccc;
     border-radius: 5px;
     margin: 20vh auto;
+    transition: all .5s ease;
+    &:hover {
+      box-shadow: 0 0 3px rgba(0,0,0,0.3), inset 0 0 3px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
+    }
     .user-top {
       display: flex;
       height: 40%;
@@ -35,7 +39,6 @@
     }
   }
 }
-
 a {
   text-decoration: none;
   color: teal;

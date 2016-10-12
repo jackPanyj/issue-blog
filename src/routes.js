@@ -9,8 +9,10 @@ export default (
 	<Route path = "/" component = {App}>
 		<Route path = "/home" component = {Home}/>
 		<Route path = "/about" component = {About} />
-		<Route path = "/blog" component = {Blog}/>
-		<Route path = "/blog_detail/:id" component = {BlogDetail}/>
+		<Route path = "/blog">
+			<IndexRoute component = {Blog} />
+			<Route path = ":id" component = {BlogDetail}/>
+		</Route>
 		<IndexRoute component = {Home} />
 	</Route>
 )

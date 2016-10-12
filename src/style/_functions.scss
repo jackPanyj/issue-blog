@@ -1,0 +1,7 @@
+@function multiple-box-shadow ($n, $color: 'pink') {
+	$value: '#{random(1000)}px #{random(1000)}px #f7f7f7';
+	@for $i from 2 through $n {
+		$value: '#{$value} , #{random(3000)}px #{random(3000)}px #{$color}'
+	}
+	@return unquote($value);
+}

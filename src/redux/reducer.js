@@ -26,6 +26,6 @@ function handleIssue(state = {}, action) {
 }
 
 export default combineReducers({
-  handleUserInfo,
-  handleIssue
+  userInfo: handleUserInfo,
+  issues: handleIssue
 })

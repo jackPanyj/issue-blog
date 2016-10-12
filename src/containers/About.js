@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import CircularProgress from 'material-ui/lib/circular-progress'
 import {connect} from 'react-redux'
 import '../style/about.scss'
 import {fetchUserInfo} from '../redux/action'
@@ -13,9 +12,9 @@ class About extends Component {
 		this.props.dispatch(fetchUserInfo())
 	}
 	render(){
-		let userInfo = this.props.handleUserInfo
+		let userInfo = this.props.userInfo
 		const Content = JSON.stringify(userInfo) === '{}'
-			? <div style={{margin:'auto'}}><CircularProgress /></div>
+			? <div className="loading"/>
 		  : <UserInfo userInfo={userInfo}/>
 		return (
 			<div className="about">

@@ -1,29 +1,29 @@
 import React, {Component} from 'react';
-import Card from 'material-ui/lib/card/card';
-import CardActions from 'material-ui/lib/card/card-actions';
-import CardHeader from 'material-ui/lib/card/card-header';
-import FlatButton from 'material-ui/lib/flat-button';
-import CardText from 'material-ui/lib/card/card-text';
+import RaisedButton from 'material-ui/lib/raised-button';
 class BlogItem extends Component {
   constructor(props) {
     super(props)
   }
-
+  handleClick () {
+    const blog = this.props.blog
+    this.context.router.push(`/blog/${blog.number}`)
+  }
   render () {
     const blog = this.props.blog
     return (
-      <Card>
-        <CardHeader
-          title={blog.title}
-          subtitle={blog.body.substr(0,20) + '...'}
-          actAsExpander={true}
-          showExpandableButton={true}
-        />
-      <CardText expandable={true} dangerouslySetInnerHTML={{__html: blog.content }}>
-        </CardText>
-      </Card>
+      <div className="blog-card">
+        <div className="blog-wraper">
+          <div className="blog-header">{blog.title}</div>
+          <div className="blog-text">{blog.body.substr(0, 50) + '...'}</div>
+          <div className="blog-action" onClick={this.handleClick.bind(this)}>
+            <RaisedButton label="继续阅读" primary={true}/>
+          </div>
+        </div>
+      </div>
     )
   }
 }
-
+BlogItem.contextTypes = {
+	router: React.PropTypes.object.isRequired
+};
 export default BlogItem

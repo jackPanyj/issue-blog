@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import App from './containers/App';
-import {Router, hashHistory} from 'react-router';
+import {Router, hashHistory, browserHistory} from 'react-router';
 import {createStore, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import routes from './routes.js';
