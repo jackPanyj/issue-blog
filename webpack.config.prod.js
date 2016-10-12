@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: './dist/'
+    publicPath: 'http://7xsn63.com2.z0.glb.clouddn.com/[hash]/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -34,7 +34,7 @@ module.exports = {
       loader: 'style!css!autoprefixer!sass'
     },
     {
-      test: /\.(jpe?g|png)$/,
+      test: /\.(jpe?g|png|svg)$/,
       loader:'file'
     }]
   }

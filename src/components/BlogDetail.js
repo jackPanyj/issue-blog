@@ -4,10 +4,9 @@ import marked from 'marked'
 class BlogDetail extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
   }
   render () {
-    const blog = this.context.store.getState().issues.blogs[this.props.params.id]
+    const blog = this.context.store.getState().issues.blogs['key' + this.props.params.id]
     return (
       <div className="blog-detail">
         <h1>{blog.title}</h1>

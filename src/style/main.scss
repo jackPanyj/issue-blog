@@ -6,6 +6,7 @@ html {
 
 * {
 	box-sizing: border-box;
+	word-break: break-all;
 }
 
 body {
@@ -31,16 +32,23 @@ body {
 	box-shadow: multiple-box-shadow(1300, 'skyblue')
 }
 .home-stars {
-	box-shadow: multiple-box-shadow(1300, 'lightgreen')
+	box-shadow: multiple-box-shadow(1300, 'orange')
 }
 .loading {
 	width: 200px;
 	height: 200px;
 	margin: auto;
-	background: url(../assets/loading.svg) no-repeat center;
+	background: url(http://7xsn63.com2.z0.glb.clouddn.com/loading.svg) no-repeat center;
 }
 
-
+.markdown-body {
+  h1 {
+		font-size: 1.5em;
+	}
+	blockquote {
+		margin-top: 1em;
+	}
+}
 
 ul {
 	padding: 0;

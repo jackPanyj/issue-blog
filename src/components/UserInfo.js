@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class UserInfo extends Component {
   render() {
     const userInfo = this.props.userInfo
-    console.log(1)
     return (	<div className="user-info">
                   <section className="user-top">
                     <img src={userInfo.data.avatar_url}/>
