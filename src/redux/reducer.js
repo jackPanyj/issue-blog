@@ -17,7 +17,9 @@ function handleIssue(state = {}, action) {
   switch (action.type) {
     case fetchIssueEnd:
       return Object.assign({}, state, {
-        blogs: action.blogs
+        blogs: action.blogs,
+        status: action.status,
+        message: action.message
       })
       break;
     default:

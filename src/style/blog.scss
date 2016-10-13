@@ -56,11 +56,32 @@
   height: 36px;
   flex-shrink: 0;
 }
-
+.blog-error {
+  margin: 0 auto;
+  flex-grow: 1;
+  h1 {
+    font-size: 50px;
+    color: teal;
+    width: fit-content;
+    margin: 180px auto;
+  }
+}
 .blog-detail {
   max-width: 1000px;
   margin: 50px auto;
   border-radius: 10px;
   padding: 20px;
   background: #f3f1f1;
+}
+.replace-blog-account {
+  display: flex;
+  margin: auto;
+  width: fit-content;
+  margin-top: 50px;
+  [class*=input-] {
+    margin: 0 30px;
+  }
+  .input-button {
+    align-self: center;
+  }
 }
