@@ -49,6 +49,7 @@ function fetchIssue(page = 1, num = 20) {
 
 
 function fetchBody(num = 0) {
+  console.log(num);
   return dispatch => {
     fetch(`${url}repos/${userInfo.username}/${userInfo.repo}/issues/${num}`)
     .then(res => res.json())

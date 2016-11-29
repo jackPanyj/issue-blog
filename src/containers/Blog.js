@@ -65,7 +65,7 @@ class Blog extends Component {
 			const {blogs, status, message} = this.props.issues
 			if (status === 'success') {
 				return (
-					<div>
+					<div className="blog-body">
 						{this.getForm()}
 						<div className="blog">
 								{map(blogs, (val, index) =>  <BlogItem blog={val} key={index + Date.now()} />)}

@@ -3,24 +3,25 @@
 }
 
 #chat {
-  width: 800px;
-  height: 1000px;
-  border: 1px solid gray;
+  width: 60vw;
+  height: 600px;
   margin: auto;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+  box-shadow: 4px 0 2px -3px rgba(gray, .5), -4px 0 2px -3px rgba(gray, .5), 0 4px 2px -3px rgba(gray, .5), 0 -4px 2px -3px rgba(gray, .5);
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
   .messages {
     flex: 1;
     overflow: auto;
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
+    background-color: white;
   }
   .card {
-    height: 100px;
-    border-radius: 10px;
-    background-color: #ddecde;
+    height: 60px;
+    background-color: #e7e6f3;
+    box-shadow: 4px 0 2px -4px rgba(gray, .5), -4px 0 2px -4px rgba(gray, .5), 0 4px 2px -4px rgba(gray, .5), 0 -4px 2px -4px rgba(gray, .5);
     margin: 10px;
     display: flex;
     flex-shrink: 0;
@@ -29,14 +30,14 @@
     align-self: center;
     font-size: 20px;
     padding-left: 20px;
-    color: teal;
+    color: #009688;
     flex: 0 0 20%;
-    border-right: 1px solid teal;
+    border-right: 1px solid currentColor;
   }
   .right {
     flex: 1;
     margin: auto;
-    color: purple;
+    color: blue;
     font-size: 20px;
     padding-left: 30px;
   }
@@ -45,9 +46,10 @@
     display: flex;
     align-items: center;
     padding-left: 30px;
-    border-top: 2px solid green;
+    border-top: 1px solid rgba(gray, .8);
     justify-content: space-around;
     flex-shrink: 0;
+    background-color: #fff;
   }
 
   input {
@@ -84,11 +86,15 @@
   }
 }
 .home {
+  background-color: #e3e3e3;
   .title {
-    margin-top: 100px;
-    margin-left: calc((100% - 800px) / 2);
-    color: #512DA8;
-    width: fit-content;
-    letter-spacing: 2em;
+    margin: 30px auto;
+    padding: 10px;
+    box-shadow: 4px 0 2px -4px rgba(gray, .5), -4px 0 2px -4px rgba(gray, .5), 0 4px 2px -4px rgba(gray, .5), 0 -4px 2px -4px rgba(gray, .5);
+    width: 20vw;
+    text-align: center;
+    color: #00bcd4;
+    letter-spacing: 1em;
+    background-color: #fff;
   }
 }

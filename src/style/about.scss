@@ -1,22 +1,27 @@
 .about {
   display: flex;
+  background-color: #e3e3e3;
+  .user-name {
+    color: teal;
+  }
   .user-info {
     display: flex;
     flex-direction: column;
-    height: 350px;
-    width: 600px;
-    border: 3px solid #ccc;
+    background-color: #fff;
+    height: 300px;
+    width: 500px;
+    box-shadow: 4px 0 2px -3px rgba(gray, .5), -4px 0 2px -3px rgba(gray, .5), 0 4px 2px -3px rgba(gray, .5), 0 -4px 2px -3px rgba(gray, .5);
     border-radius: 5px;
     margin: 20vh auto;
     transition: all .5s ease;
     &:hover {
-      box-shadow: 0 0 3px rgba(0,0,0,0.3), inset 0 0 3px rgba(0,0,0,0.3);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
     .user-top {
       display: flex;
       height: 40%;
       padding: 20px 50px;
+      border-bottom: 1px solid orange;
       .user-name {
         font-size: 20px;
       }
@@ -35,6 +40,12 @@
         &:not(:last-child) {
           border-right: 1px solid #ccc;
         }
+      }
+      p:first-child {
+        color: teal;
+      }
+      p:last-child {
+        color: red;
       }
     }
   }

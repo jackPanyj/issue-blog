@@ -124,7 +124,7 @@ class Home extends Component {
                 value={this.state.msg}
                 onEnterKeyDown={this.handleClick.bind(this)}
               />
-              <RaisedButton label="发送" secondary={true} onClick={this.handleClick.bind(this)} />
+              <RaisedButton label="发送" primary={true} onClick={this.handleClick.bind(this)} />
             </div>
           </section>
     		</div>
