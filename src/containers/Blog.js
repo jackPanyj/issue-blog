@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import BlogItem from '../components/BlogItem'
 import {connect} from 'react-redux'
-import CircularProgress from 'material-ui/lib/circular-progress'
 import '../style/blog.scss'
 import { fetchIssue } from '../redux/action'
 import map from 'lodash/map'

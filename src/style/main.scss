@@ -7,6 +7,8 @@ html {
 * {
 	box-sizing: border-box;
 	word-break: break-all;
+	padding: 0;
+	margin: 0;
 }
 
 body {
@@ -75,10 +77,6 @@ ul {
 }
 .home {
 	flex-grow: 1;
-	z-index: -1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 .about,.account {
 	flex-grow: 1;

@@ -1,6 +1,6 @@
 const {localStorage, JSON} = window
 const storage = {
-  set (key, val = {}) {
+  set (key, val = {}, expiredMin = Infinity) {
     let _value = JSON.stringify(val)
     localStorage.setItem(key, _value)
   },

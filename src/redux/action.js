@@ -1,9 +1,12 @@
 import zipObject from 'lodash/zipObject'
 import storage from '../tools/storage'
-const fetchUserInfoEnd = 'FETCH_USER_INFO_END'
-const fetchIssueEnd = 'FETCH_ISSUE_END'
+export const fetchUserInfoEnd = 'FETCH_USER_INFO_END'
+export const fetchIssueEnd = 'FETCH_ISSUE_END'
+export const fetchBodyEnd = 'FETCH_BODY_END'
 const url = 'https://api.github.com/'
 const userInfo = storage.get('userInfo') || {username: 'jackpanyj', repo: 'reading-note'}
+
+// 获取用户信息
 function fetchUserInfo() {
   return dispatch => {
     fetch(`${url}users/${userInfo.username}`)
@@ -18,9 +21,10 @@ function fetchUserInfo() {
   }
 }
 
-function fetchIssue() {
+// 获取博客列表
+function fetchIssue(page = 1, num = 20) {
   return dispatch => {
-    fetch(`${url}repos/${userInfo.username}/${userInfo.repo}/issues?page=1&per_page=20`)
+    fetch(`${url}repos/${userInfo.username}/${userInfo.repo}/issues?page=${page}&per_page=${num}`)
     .then(res => res.json())
     .then(issues => {
       if (issues.documentation_url) {
@@ -43,4 +47,19 @@ function fetchIssue() {
   }
 }
 
-export {fetchUserInfo, fetchUserInfoEnd, fetchIssue, fetchIssueEnd}
+
+function fetchBody(num = 0) {
+  return dispatch => {
+    fetch(`${url}repos/${userInfo.username}/${userInfo.repo}/issues/${num}`)
+    .then(res => res.json())
+    .then(blog => {
+      dispatch({
+        type: fetchBodyEnd,
+        blog,
+        message: 'success'
+      })
+    })
+  }
+}
+
+export {fetchUserInfo, fetchIssue, fetchBody}
